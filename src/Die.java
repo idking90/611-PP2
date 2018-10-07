@@ -8,11 +8,12 @@
 //*																		*
 //*						Created 05 Oct 2018								*
 //*																		*
-//*						Saved in RunDice.java							*
+//*						Saved in Die.java							*
 //*																		*
 //***********************************************************************
 
-
+import java.util.*;
+import javax.swing.*;
 public class Die {
 
 //class variables****************************
@@ -21,26 +22,42 @@ public class Die {
 	
 //constructor********************************
 	public Die() {
+     this.number = 0;
+	  this.keep = false;
 		
 	}
 	
 //get set methods**************************************
 	public boolean getKeep() {
-		return keep;
+     return keep;
 	}
 	
 	public void setKeep(boolean newKeepValue) {
-		keep = newKeepValue;
+     keep = newKeepValue;
 	}
 	
 	public int getNumber() {
-		return number;
+     return number;
 	}
 	
+   //generates random number for the dice roll result
 	public void setNumber(int newNumber) {
 		number = newNumber;
+
 	}
 
 //behavioral methods*************************************
+	
+	public int genRandomNumber() {
+	     Random diceRoll = new Random();
+	     int diceNumber = diceRoll.nextInt(7);
+	     
+	     //repeats process if diceRoll equals 0 because Random.nextInt is 0-inclusive
+	     while (diceNumber == 0) {
+	       diceNumber = diceRoll.nextInt(7);
+	     }
+	     
+	     return diceNumber;
+	}
 	
 }
