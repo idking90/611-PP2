@@ -17,48 +17,41 @@ import javax.swing.*;
 public class Die {
 
 //class variables****************************
-	private int number;
+ 	private int number;
 	private boolean keep;
 	
 //constructor********************************
 	public Die() {
-    //each new Die will automatically be created with a random number 
-	this.number = genRandomNumber();
+     this.number = 0;
 	  this.keep = false;
-		
 	}
 	
 //get set methods**************************************
 	public boolean getKeep() {
-     return keep;
+      return keep;
 	}
 	
 	public void setKeep(boolean newKeepValue) {
-     keep = newKeepValue;
+      keep = newKeepValue;
 	}
 	
 	public int getNumber() {
-     return number;
+      return number;
 	}
+   
+   public void setNumber(int newNumber) {
+      number = newNumber;
+   }
 	
    //generates random number for the dice roll result
-	public void setNumber(int newNumber) {
-		number = newNumber;
-
-	}
-
-//behavioral methods*************************************
-	
 	public int genRandomNumber() {
-	     Random diceRoll = new Random();
-	     int diceNumber = diceRoll.nextInt(7);
+	   Random diceRoll = new Random();
+	   int diceNumber = diceRoll.nextInt(7);
 	     
 	     //repeats process if diceRoll equals 0 because Random.nextInt is 0-inclusive
-	     while (diceNumber == 0) {
-	       diceNumber = diceRoll.nextInt(7);
-	     }
-	     
-	     return diceNumber;
-	}
-	
+	   while (diceNumber == 0) {
+	      diceNumber = diceRoll.nextInt(7);
+	   }
+	   return diceNumber;
+   }   
 }
