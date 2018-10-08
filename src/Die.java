@@ -22,7 +22,8 @@ public class Die {
 	
 //constructor********************************
 	public Die() {
-     this.number = 0;
+    //each new Die will automatically be created with a random number 
+	this.number = genRandomNumber();
 	  this.keep = false;
 		
 	}
